@@ -11,7 +11,7 @@ tokenizer = AutoTokenizer.from_pretrained(checkpoint)
 
 def tokenize_function(example):
     return tokenizer(example["sentence1"], example["sentence2"], truncation=True)
-
+#Bonjour les jeunes
 
 tokenized_datasets = raw_datasets.map(tokenize_function, batched=True)
 data_collator = DataCollatorWithPadding(tokenizer=tokenizer)
